@@ -1,4 +1,4 @@
-//Многопоточность | Потоки | thread | Многопоточное программирование | Уроки | C++ #1 - Видео №1./
+п»ї//РњРЅРѕРіРѕРїРѕС‚РѕС‡РЅРѕСЃС‚СЊ | РџРѕС‚РѕРєРё | thread | РњРЅРѕРіРѕРїРѕС‚РѕС‡РЅРѕРµ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ | РЈСЂРѕРєРё | C++ #1 - Р’РёРґРµРѕ в„–1./
 
 #include<iostream>
 #include<thread>
@@ -10,7 +10,7 @@ void DoWork()
 {
 	for (size_t i = 0; i < 10; i++)
 	{
-		cout << "ID поток = " << this_thread::get_id() << "\tDoWork\t" << i << endl;
+		cout << "ID РїРѕС‚РѕРє = " << this_thread::get_id() << "\tDoWork\t" << i << endl;
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 }
@@ -24,7 +24,7 @@ int main()
 	
 	for (size_t i = 0; i < 10; i++)
 	{
-		cout << "ID поток = " << this_thread::get_id() << "\tmain\t" << i << endl;
+		cout << "ID РїРѕС‚РѕРє = " << this_thread::get_id() << "\tmain\t" << i << endl;
 		this_thread::sleep_for(chrono::milliseconds(500));
 	}
 	
@@ -33,4 +33,4 @@ int main()
 
 	return 0;
 }
-/*Потоки процессора.....*/
+/*РџРѕС‚РѕРєРё РїСЂРѕС†РµСЃСЃРѕСЂР°.....*/
