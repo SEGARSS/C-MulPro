@@ -2,6 +2,8 @@
  - **Источник обучающих материаллов Канал #SimpleCode [Ссылка](https://www.youtube.com/@SimpleCodeIT/featured)**
 	-  Непосредственный плэйлист занятий [Ссылка](https://www.youtube.com/playlist?list=PLQOaTSbfxUtAc_RpyDiWCHq0YTzLtVSD0)
 
+###
+
 </details> 
 
 <details>
