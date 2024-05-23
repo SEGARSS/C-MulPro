@@ -37,3 +37,12 @@ thread - lesson_00 Многопоточность | Потоки | Многопоточное программирование | У
 
 </details> 
 
+<details>
+<summary> 
+Лямбда выражения и возврат результата выполнения потока - lesson_02 | Многопоточное программирование | Уроки | C++ #4 - Видео №4.
+</summary>
+
+* [Ссылка на видео - №4](https://www.youtube.com/watch?v=DFgtADi0Mjo&list=PLQOaTSbfxUtAc_RpyDiWCHq0YTzLtVSD0&index=4)
+
+</details> 
+
