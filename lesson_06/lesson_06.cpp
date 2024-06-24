@@ -1,4 +1,4 @@
-﻿// Что такое mutex | Cинхронизация потоков | Многопоточное программирование | C++ #6 - Видео №6. 
+﻿// lock_guard mutex c++ | Cинхронизация потоков | Многопоточное программирование | C++ #7 - - Видео №7.
 
 #include<iostream>
 #include<mutex>
@@ -14,20 +14,19 @@ void Print(char ch)
 {
 	this_thread::sleep_for(chrono::milliseconds(2000));
 
-	mtx.lock();
-
-	for (int i = 0; i < 5; i++)
 	{
-		for (int i = 0; i < 10; i++)
+		lock_guard<mutex> guard(mtx);
+		for (int i = 0; i < 5; i++)
 		{
-			cout << ch;
-			this_thread::sleep_for(chrono::milliseconds(20));
+			for (int i = 0; i < 10; i++)
+			{
+				cout << ch;
+				this_thread::sleep_for(chrono::milliseconds(20));
+			}
+			cout << endl;
 		}
 		cout << endl;
 	}
-	cout << endl;
-
-	mtx.unlock();
 
 	this_thread::sleep_for(chrono::milliseconds(2000));
 }
@@ -46,9 +45,5 @@ int main()
 	t2.join();
 	t3.join();
 
-	//Print('*');
-	//Print('#');
-
 	return 0;
 }
-//-------------------------------------------------------------------------------
