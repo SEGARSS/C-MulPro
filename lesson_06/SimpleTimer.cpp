@@ -1,11 +1,11 @@
-#include"SimpleTimer.h"
+ï»¿#include"SimpleTimer.h"
 
 SimpleTimer::~SimpleTimer()
 {
 	end = chrono::high_resolution_clock::now();
 	duration = end - start;
 	float result = duration.count();
-	cout << "Ïðîøëî âðåìÿ: " << result << " ñåêóíä." << endl;
+	cout << "ÐŸÑ€Ð¾ÑˆÐ»Ð¾ Ð²Ñ€ÐµÐ¼Ñ: " << result << " ÑÐµÐºÑƒÐ½Ð´." << endl;
 }
 
 SimpleTimer::SimpleTimer()
