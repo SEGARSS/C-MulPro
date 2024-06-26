@@ -1,4 +1,4 @@
-п»ї// lock_guard mutex c++ | CРёРЅС…СЂРѕРЅРёР·Р°С†РёСЏ РїРѕС‚РѕРєРѕРІ | РњРЅРѕРіРѕРїРѕС‚РѕС‡РЅРѕРµ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ | C++ #7 - Р’РёРґРµРѕ в„–7.
+// unique_lock mutex | unique_lock vs lock_guard | Многопоточное программирование | C++ #10 - Видео №10.
 
 #include<iostream>
 #include<mutex>
@@ -11,22 +11,25 @@ using namespace std;
 mutex mtx;
 //-------------------------------------------------------------------------------
 void Print(char ch)
-{
+{	
+	unique_lock<mutex> ul(mtx, defer_lock);
+
 	this_thread::sleep_for(chrono::milliseconds(2000));
 
+	ul.lock();
+
+	for (int i = 0; i < 5; i++)
 	{
-		lock_guard<mutex> guard(mtx);
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 10; i++)
 		{
-			for (int i = 0; i < 10; i++)
-			{
-				cout << ch;
-				this_thread::sleep_for(chrono::milliseconds(20));
-			}
-			cout << endl;
+			cout << ch;
+			this_thread::sleep_for(chrono::milliseconds(10));
 		}
 		cout << endl;
 	}
+	cout << endl;
+
+	ul.unlock();
 
 	this_thread::sleep_for(chrono::milliseconds(2000));
 }
@@ -37,14 +40,13 @@ int main()
 
 	SimpleTimer timer;
 
-	thread t1(Print,'*');
-	thread t2(Print,'#');
-	thread t3(Print,'@');
+	thread t1(Print, '*');
+	thread t2(Print, '#');
 
 	t1.join();
 	t2.join();
-	t3.join();
 
 	return 0;
 }
 //-------------------------------------------------------------------------------
+/*Гибко вызывает блокировку.*/
